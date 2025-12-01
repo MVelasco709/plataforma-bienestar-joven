@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Interactiva Bienestar Joven</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#juegos">Juegos</a></li>
+            <li><a href="#info">Mi Información</a></li>
+            <li><a href="#asistente">Asistente IA</a></li>
+        </ul>
+    </nav>
+
+    <!-- Panel Central -->
+    <div id="panel-central" class="panel">
+        <h2>Panel Central del Día</h2>
+        <ul>
+            <li>Actividades del día</li>
+            <li>Resumen de juegos y secciones</li>
+        </ul>
+    </div>
+
+    <!-- Barra Lateral de Progreso -->
+    <aside class="sidebar">
+        <h3>Barra Lateral de Progreso</h3>
+        <ul>
+            <li>Estado emocional: 😊 Bueno</li>
+            <li>Hábitos: 80% completados</li>
+            <li>Metas: 3/5 logradas</li>
+        </ul>
+    </aside>
+
+    <!-- Sección Juegos -->
+    <section id="juegos">
+        <h2>JUEGOS</h2>
+        <p>Selecciona un minijuego:</p>
+        <div class="juegos-grid">
+            <button onclick="jugar('autoconocimiento')">Autoconocimiento</button>
+            <button onclick="jugar('decisiones')">Decisiones</button>
+            <button onclick="jugar('gestion-emocional')">Gestión Emocional</button>
+            <button onclick="jugar('habitos-saludables')">Hábitos Saludables</button>
+        </div>
+        <div id="nivel-actual">Nivel actual: 🟢🟢🟢 (3 estrellas)</div>
+        <div id="recompensas" style="color: #ff69b4;">Recompensas: Insignias, retos completados</div>
+        <div id="retroalimentacion" style="color: #00ff00;"></div>
+    </section>
+
+    <!-- Sección Mi Información -->
+    <section id="info">
+        <h2>MI INFORMACIÓN</h2>
+        <div class="perfil">
+            <h3>Perfil del usuario</h3>
+            <p>Edad: 16 | Hábitos: Lectura diaria | Estado emocional: Positivo</p>
+        </div>
+        <div class="dashboard">
+            <h3>Dashboard personal</h3>
+            <ul>
+                <li>Gráfico de hábitos</li>
+                <li>Progreso semanal</li>
+                <li>Estado emocional promedio</li>
+            </ul>
+            <canvas id="grafico-habitos" width="400" height="200"></canvas>
+        </div>
+        <div class="recomendaciones">
+            <h3>Recomendaciones IA:</h3>
+            <p>"Te recomiendo dormir 8 horas hoy."</p>
+            <p>"Nueva meta sugerida: 10 min de lectura."</p>
+        </div>
+    </section>
+
+    <!-- Asistente IA -->
+    <div id="asistente" class="chatbot">
+        <h3>Asistente IA (Preguntas en tiempo real)</h3>
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Escribe tu pregunta...">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <!-- Diagrama de Flujo (simple SVG) -->
+    <section id="flujo">
+        <h2>Diagrama de Flujo</h2>
+        <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="50" width="100" height="50" fill="none" stroke="green"/>
+            <text x="100" y="75" text-anchor="middle">Inicio</text>
+            <line x1="150" y1="75" x2="200" y2="75" stroke="green"/>
+            <rect x="200" y="50" width="100" height="50" fill="none" stroke="green"/>
+            <text x="250" y="75" text-anchor="middle">Juegos</text>
+            <!-- Más elementos... simplificado -->
+        </svg>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
